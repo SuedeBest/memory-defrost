@@ -1,5 +1,5 @@
-mcp
-starlette
+mcp==1.2.0
+starlette==0.36.3
 uvicorn
 psycopg2-binary
 numpy
