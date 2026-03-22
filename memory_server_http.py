@@ -970,11 +970,11 @@ sse = SseServerTransport("/messages/")
 
 async def handle_sse(request):
     """处理 SSE 连接"""
-    async with sse.connect_sse(
+    async withsse.connect_sse(
         request.scope, request.receive, request._send
-    ) as streams:
+    ) as (read_stream, write_stream):
         await server.run(
-            streams[0], streams[1], server.create_initialization_options()
+            read_stream, write_stream, server.create_initialization_options()
         )
 
 
